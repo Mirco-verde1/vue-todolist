@@ -13,7 +13,7 @@ var app = new Vue({
     userInput:''
 
   },
-
+  
   methods:{
 
     //NELLA MIA LISTA INSERISCO I DATI RICEVUTI DALL'INPUT

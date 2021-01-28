@@ -11,28 +11,46 @@
 </head>
 <body>
 
-
-  <div id="container">
-
-    <input v-model='userInput' placeholder="Compila la tua lista">
-    
-    <button @click='pushInputInList'>Aggiungi alla tua lista</button>
+  <!-- CONTENITORE PRINCIPALE -->
+  <div id="container" class="main-container">
 
 
-    <div class="main-list">
-
-      <ul>
-        <li @click='removeFromIputList(index)' v-for = "(elem,index) in appList"
-
-        :class="{
-          'fas':true,
-          'fa-times-circle':true
-        }"
-
-        >{{elem}}</li>
+    <div class="boolean-logo">
+      <img src="img/logo.png" alt="">
+    </div>
 
 
-      </ul>
+    <!-- INPUT E BUTTON NELLO STESSO CONTENITORE -->
+    <div class="input-submit">
+
+      <input v-model='userInput' @keyup.enter='pushInputInList' placeholder="Compila la tua lista">
+
+      <button @click='pushInputInList' >Aggiungi alla tua lista</button>
+
+    </div>
+
+
+    <!-- QUI I RISULTATI DEGLI INPUT -->
+    <!-- ALL'INTERNO STAMPO A SCHERMO IL CONTENUTO DI 'APPLIST'
+    A SUA VOLTA OGNI INPUT STAMPATO IN PAGINA TRAMITE CLICK O INVIO GENERA UNA CLASSE 'FAS' -->
+    <div class="content-list">
+
+      <h1>Todo List</h1>
+      <div class="main-list">
+
+        <ul>
+          <li @click='removeFromIputList(index)' v-for = "(elem,index) in appList"
+
+          :class="{
+            'fas':true,
+            'fa-times-circle':true
+          }"
+
+          >{{elem}}</li>
+
+
+        </ul>
+      </div>
     </div>
 
   </div>
