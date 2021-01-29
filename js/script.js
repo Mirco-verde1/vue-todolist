@@ -13,7 +13,7 @@ var app = new Vue({
     userInput:''
 
   },
-  
+
   methods:{
 
     //NELLA MIA LISTA INSERISCO I DATI RICEVUTI DALL'INPUT
@@ -26,9 +26,9 @@ var app = new Vue({
     },
 
     //RIMUOVO SOLAMENTE I DATI DELLA LISTA 'CLICCATI' DALL'UTENTE
-    removeFromIputList:function(idx){
-      let removing = this.appList.splice(idx)
-      return removing;
+    removeFromIputList:function(index){
+      let removing = this.appList.splice(index,1)
+
     },
   }
 });
